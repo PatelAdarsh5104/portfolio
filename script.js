@@ -99,27 +99,27 @@ const skills = [
 const projects = [
     {
         title: "SMS & EMAIL Spam Detection",
-        images: ["images/my-image.png"],
+        images: ["images/abc.png"],
         summary: "Developed a Spam SMS Classifier using machine learning techniques.",
         technologies: ["python", "ml", "fastapi", "streamlit"],
         link: "https://mlprojectdemo.streamlit.app/"
     },
     {
         title: "Resume and Job Description Matching",
-        images: ["images/my-image.png"],
+        images: ["images/def.png"],
         summary: "Created an AI-powered resume analyzer using Groq LLM ",
         technologies: ["python", "ai", "streamlit", "llm"]
     },
     {
         title: "ABC",
-        images: ["images/my-image.png"],
+        images: ["images/ghi.png"],
         summary: "Developed a Spam SMS Classifier using machine learning techniques.",
         technologies: ["python", "ml", "fastapi", "streamlit"],
         link: "https://mlprojectdemo.streamlit.app/"
     },
     {
         title: "DEF",
-        images: ["images/my-image.png"],
+        images: ["images/lmp.png"],
         summary: "Created an AI-powered resume analyzer using Groq LLM (Llama 3-8B-8192) that matches resumes with job descriptions.",
         technologies: ["python", "ai", "streamlit", "llm"]
     },
