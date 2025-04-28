@@ -158,34 +158,54 @@ body {
 /* Experience Section */
 .experience-content {
     width: 100%;
-    overflow-x: auto;
+    overflow: hidden;
     padding: 2rem;
+    position: relative;
+}
+
+.experience-content .content-wrapper {
     display: flex;
     gap: 2rem;
-    scrollbar-width: thin;
-    scrollbar-color: var(--accent-color) var(--bg-color);
+    animation: scrollExperience 30s linear infinite;
+}
+
+.experience-content:hover .content-wrapper {
+    animation-play-state: paused;
+}
+
+@keyframes scrollExperience {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
 .experience-item {
     min-width: 400px;
+    width: 700px;
     flex-shrink: 0;
     background: var(--light-background);
     padding: 2.5rem;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    height: auto;
 }
 
 .company-logo {
-    width: 60px;
-    height: 60px;
+    width: 120px;
+    height: 120px;
     object-fit: contain;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0rem;
 }
 
 .experience-item h3 {
     font-size: 1.5rem;
     color: var(--dark-black);
-    margin-bottom: 0.5rem;
+    margin-bottom: .1rem;
 }
 
 .company-name {
@@ -197,13 +217,16 @@ body {
 .date {
     color: #666;
     font-size: 0.9rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: .3rem;
 }
 
 .experience-item ul {
     list-style: none;
     padding: 0;
     margin: 1rem 0;
+    width: 100%;
+    word-wrap: break-word;
+    flex-grow: 1;  /*Add this */
 }
 
 .experience-item li {
@@ -223,7 +246,8 @@ body {
 .tech-stack {
     display: flex;
     gap: 1rem;
-    margin-top: 1.5rem;
+    /* margin-top: 1.5rem; */
+    margin-top: auto;  /* Add this */
     flex-wrap: wrap;
 }
 
@@ -293,21 +317,69 @@ body {
 
 .projects-content {
     width: 100%;
-    overflow-x: auto;
+    overflow: hidden;
     padding: 2rem;
+    position: relative;
+}
+
+.projects-content .content-wrapper {
     display: flex;
     gap: 2rem;
-    scrollbar-width: thin;
-    scrollbar-color: var(--accent-color) var(--bg-color);
+    animation: scrollProjects 30s linear infinite;
+}
+
+.projects-content:hover .content-wrapper {
+    animation-play-state: paused;
+}
+
+@keyframes scrollProjects {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
 .project-item {
     min-width: 400px;
+    width: 520px;
     flex-shrink: 0;
     background: var(--light-background);
     padding: 2.5rem;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    position: relative;
+}
+
+.project-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.project-item.has-link {
+    position: relative;
+}
+
+.project-item.has-link::after {
+    content: "↗";
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 1.2rem;
+    color: var(--dark-green);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-item.has-link:hover::after {
+    opacity: 1;
 }
 
 .project-images {
@@ -333,12 +405,37 @@ body {
     color: #666;
     line-height: 1.6;
     margin-bottom: 1.5rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 60;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.github-link {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    color: var(--dark-black);
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    z-index: 2;
+}
+
+.github-link:hover {
+    transform: translateY(-3px);
+}
+
+.github-link i {
+    font-size: 1.5rem;
 }
 
 .project-technologies {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+    margin-top: auto;
+    padding-bottom: 3rem; /* Make space for GitHub icon */
 }
 
 .project-technologies h3 {
