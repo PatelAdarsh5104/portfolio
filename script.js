@@ -88,6 +88,16 @@ const skills = [
 
 const projects = [
     {
+        id: "voice-assistant",
+        title: "Voice AI Assistant",
+        images: ["images/voice_assistant.jpg"],
+        summary: "Developed a real-time Voice AI Agent with a streaming STT-LLM-TTS pipeline and 70% latency reduction. Features Gmail MCP integration for agentic voice-controlled email management.",
+        detail_description: "<ul><li><strong>Streaming Pipeline Architecture:</strong> Engineered a low-latency, full-duplex voice interaction system utilizing a synchronized STT → LLM → TTS pipeline over WebSockets, integrating Groq Whisper for sub-second transcription and ElevenLabs for neural speech synthesis.</li><li><strong>Latency Optimization:</strong> Achieved a ~70% reduction in Time-to-First-Byte (TTFB) for audio responses (reducing delay from 10s to ~2s) by implementing chunked stream parallelization and batching LLM token streams for concurrent TTS synthesis.</li><li><strong>Agentic MCP Integration:</strong> Pioneered the use of the Model Context Protocol (MCP) to expose a Gmail Server to the LLM, enabling autonomous agentic operations such as voice-driven inbox summarization, semantic email search, and automated drafting.</li><li><strong>Advanced Frontend Orchestration:</strong> Developed a robust React + TypeScript client featuring a custom FIFO sequential audio queue and Web Audio API integration to handle non-blocking, real-time playback of fragmented MP3 chunks.</li><li><strong>Scalable Backend Design:</strong> Built a high-concurrency FastAPI backend incorporating LangChain for stateful session management, conversational memory persistence, and an event-driven JSON protocol for real-time monitoring.</li></ul>",
+        technologies: ["Groq Whisper", "LLaMA 3.1", "ElevenLabs", "MCP (Model Context Protocol)", "Web Audio API", "WebSockets", "React", "TypeScript", "LangChain"],
+        link: "",
+        github: "https://github.com/PatelAdarsh5104/voiceagent"
+    },
+    {
         id: "spam-detection",
         title: "SMS & EMAIL Spam Detection",
         images: ["images/Email_spam_project.png"],
