@@ -103,11 +103,39 @@ document.addEventListener('DOMContentLoaded', () => {
     setupProjectsSection();
     setupContactSection();
     setupCircles();
+    setupThemeToggle();
 });
+
+// Theme Toggle
+function setupThemeToggle() {
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+    const icon = themeToggle.querySelector('i');
+
+    // Check for saved theme
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        body.classList.add('dark-mode');
+        icon.classList.replace('fa-moon', 'fa-sun');
+    }
+
+    themeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
+        const isDark = body.classList.contains('dark-mode');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        
+        if (isDark) {
+            icon.classList.replace('fa-moon', 'fa-sun');
+        } else {
+            icon.classList.replace('fa-sun', 'fa-moon');
+        }
+    });
+}
 
 // Setup Hero Section
 function setupHeroSection() {
     const heroContent = document.querySelector('.hero-content');
+    if (!heroContent) return;
     heroContent.innerHTML = `
         <img src="${pageInfo.heroPic}" alt="${pageInfo.name}" class="profile-pic">
         <h1 class="hero-title">I'm ${pageInfo.name}</h1>
@@ -117,6 +145,7 @@ function setupHeroSection() {
 // Setup About Section
 function setupAboutSection() {
     const aboutContent = document.querySelector('.about-content');
+    if (!aboutContent) return;
     aboutContent.innerHTML = `
         <h2 class="section-title">A B O U T</h2>
         <div class="about-grid">
@@ -131,6 +160,7 @@ function setupAboutSection() {
 // Setup Experience Section
 function setupExperienceSection() {
     const experienceContent = document.querySelector('.experience-content');
+    if (!experienceContent) return;
     const experienceHTML = experiences.map(exp => `
             <div class="experience-item">
                 <img src="${exp.logo}" alt="${exp.company}" class="company-logo">
@@ -155,6 +185,7 @@ function setupExperienceSection() {
 // Setup Skills Section
 function setupSkillsSection() {
     const skillsContent = document.querySelector('.skills-content');
+    if (!skillsContent) return;
     skillsContent.innerHTML = `
         <div class="skills-grid">
             ${skills.map(skill => `
@@ -170,6 +201,7 @@ function setupSkillsSection() {
 // Setup Projects Section
 function setupProjectsSection() {
     const projectsContent = document.querySelector('.projects-content');
+    if (!projectsContent) return;
     const projectsHTML = projects.map(project => `
         <a 
             class="project-item ${project.link ? 'has-link' : ''}" 
@@ -196,12 +228,17 @@ function setupProjectsSection() {
 
 // Setup Contact Section
 function setupContactSection() {
-    document.getElementById('phone').textContent = pageInfo.phone;
-    document.getElementById('email').textContent = pageInfo.email;
-    document.getElementById('location').textContent = pageInfo.location;
+    const phoneEl = document.getElementById('phone');
+    if (phoneEl) phoneEl.textContent = pageInfo.phone;
+    
+    const emailEl = document.getElementById('email');
+    if (emailEl) emailEl.textContent = pageInfo.email;
+    
+    const locationEl = document.getElementById('location');
+    if (locationEl) locationEl.textContent = pageInfo.location;
 
     const form = document.querySelector('.contact-form');
-    form.addEventListener('submit', handleFormSubmit);
+    if (form) form.addEventListener('submit', handleFormSubmit);
 }
 
 // Setup circular background

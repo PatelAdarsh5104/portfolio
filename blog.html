@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs - Adarsh Patel</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .blog-list-container {
+            max-width: 800px;
+            margin: 8rem auto;
+            padding: 0 2rem;
+        }
+        .blog-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+            text-decoration: none;
+            display: block;
+            color: inherit;
+        }
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+        .blog-date {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            margin-bottom: 0.5rem;
+        }
+        .blog-title {
+            font-size: 1.8rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+        .blog-excerpt {
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="header-left">
+            <button id="theme-toggle" class="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </button>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/pateladarsh57/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/PatelAdarsh5104" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://x.com/AdarshP85421702" target="_blank"><i class="fab fa-x-twitter"></i></a>
+            </div>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html#about">About</a>
+            <a href="index.html#experience">Experience</a>
+            <a href="index.html#skills">Skills</a>
+            <a href="index.html#projects">Projects</a>
+            <a href="blog.html">Blog</a>
+            <a href="index.html#contact" class="contact-button">GET IN TOUCH</a>
+        </nav>
+    </header>
+
+    <main class="blog-list-container">
+        <h1 class="section-title">B L O G S</h1>
+        
+        <a href="blogs/llm.html" class="blog-card">
+            <div class="blog-date">April 25, 2024</div>
+            <h2 class="blog-title">Understanding Large Language Models (LLMs)</h2>
+            <p class="blog-excerpt">Dive into the fundamentals of LLMs, how they are trained, and why they are transforming the world of AI.</p>
+        </a>
+
+        <a href="blogs/rag.html" class="blog-card">
+            <div class="blog-date">April 20, 2024</div>
+            <h2 class="blog-title">Retrieval-Augmented Generation (RAG) Explained</h2>
+            <p class="blog-excerpt">Learn how to connect LLMs with your own data using RAG for more accurate and context-aware AI applications.</p>
+        </a>
+
+        <a href="blogs/finetuning.html" class="blog-card">
+            <div class="blog-date">April 15, 2024</div>
+            <h2 class="blog-title">Mastering Model Fine-Tuning</h2>
+            <h3 class="blog-excerpt">A comprehensive guide on when and how to fine-tune pre-trained models for specific domain tasks.</h3>
+        </a>
+
+        <a href="blogs/latency.html" class="blog-card">
+            <div class="blog-date">April 10, 2024</div>
+            <h2 class="blog-title">Improving AI Application Latency</h2>
+            <p class="blog-excerpt">Optimize your AI workflows for speed. Techniques for reducing inference time and improving user experience.</p>
+        </a>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
