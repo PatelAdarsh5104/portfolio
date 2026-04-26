@@ -80,7 +80,7 @@ const skills = [
     { title: "MySQL", icon: "images/mysql-logo.svg" },
     { title: "Pinecone", icon: "images/pinecone-logo.png" },
     { title: "Chroma DB", icon: "images/chroma-logo.png" },
-    { title: "Git", icon: "images/Git-logo.png" },
+    { title: "Git", icon: "images/Git-Logo.png" },
     { title: "GitHub", icon: "images/github.png" },
     { title: "Streamlit", icon: "images/streamlit-images.png" },
 
