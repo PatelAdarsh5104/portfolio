@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PostgreSQL Row-Level Locking - Adarsh Patel</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .blog-post-container {
+            max-width: 800px;
+            margin: 8rem auto;
+            padding: 0 2rem;
+        }
+        .blog-post-header {
+            margin-bottom: 3rem;
+            border-bottom: 1px solid var(--accent-color);
+            padding-bottom: 1rem;
+        }
+        .blog-post-content {
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        .blog-post-content p {
+            margin-bottom: 1.5rem;
+        }
+        .blog-post-content h2 {
+            margin: 2rem 0 1rem;
+            color: var(--accent-color);
+        }
+        .blog-post-content ul {
+            margin-bottom: 1.5rem;
+            list-style: none;
+        }
+        .blog-post-content li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        .blog-post-content li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+        }
+        .highlight-box {
+            background: rgba(121, 168, 169, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            border-left: 4px solid var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="header-left">
+            <button id="theme-toggle" class="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </button>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/pateladarsh57/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/PatelAdarsh5104" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://x.com/AdarshP85421702" target="_blank"><i class="fab fa-x-twitter"></i></a>
+            </div>
+        </div>
+        <nav class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="../index.html#about">About</a>
+            <a href="../index.html#experience">Experience</a>
+            <a href="../index.html#skills">Skills</a>
+            <a href="../index.html#projects">Projects</a>
+            <a href="../blog.html">Blog</a>
+            <a href="../index.html#contact" class="contact-button">GET IN TOUCH</a>
+        </nav>
+    </header>
+
+    <main class="blog-post-container">
+        <div class="blog-post-header">
+            <h1 class="blog-title">Mastering Row-Level Locking for Concurrency in PostgreSQL</h1>
+            <div class="blog-date">Published on April 26, 2024</div>
+        </div>
+        
+        <article class="blog-post-content">
+            <p>I recently dove deep into PostgreSQL’s row-level locking to build scalable, concurrent job-processing systems. Here's a breakdown of what I learned and how I applied it to a real-world job queue system.</p>
+            
+            <h2>What is Row-Level Locking?</h2>
+            <p>Row-level locking prevents multiple transactions from modifying the same data simultaneously, crucial in concurrent systems where multiple processes need shared resources. It ensures data integrity while maximizing performance.</p>
+
+            <h2>Why Use It?</h2>
+            <p>It allows multiple workers to process jobs concurrently, with each handling one job at a time. This scales systems effectively when running multiple workers to handle large workloads.</p>
+
+            <h2>How Row-Level Locking Works in PostgreSQL</h2>
+            <p>PostgreSQL provides <code>FOR UPDATE</code> and <code>SKIP LOCKED</code>:</p>
+            <ul>
+                <li><strong>FOR UPDATE:</strong> Locks rows, preventing modifications until the transaction completes.</li>
+                <li><strong>SKIP LOCKED:</strong> Skips locked rows, enabling workers to pick available tasks without waiting.</li>
+            </ul>
+
+            <div class="highlight-box">
+                <h3>Real-World Use Case: Concurrent Job Processing</h3>
+                <ol>
+                    <li><strong>Job Queue:</strong> A table stores jobs with statuses like pending, in_process, completed, or failed.</li>
+                    <li><strong>Workers:</strong> Multiple workers fetch jobs, process them, and update their status.</li>
+                    <li><strong>Locking:</strong> Workers lock jobs while processing to avoid overlap and race conditions.</li>
+                    <li><strong>Failure Handling:</strong> Dedicated workers focus on retrying failed jobs up to a limit.</li>
+                </ol>
+            </div>
+
+            <h2>Comparison to Cloud-Native Services</h2>
+            <ul>
+                <li><strong>Job Queue:</strong> Like AWS SQS, jobs are placed in a queue (PostgreSQL table) and workers process them.</li>
+                <li><strong>Concurrency Management:</strong> SQS uses visibility timeouts; PostgreSQL uses row-level locking to ensure single-worker processing.</li>
+                <li><strong>Retry Mechanism:</strong> Both systems support automatic retries.</li>
+                <li><strong>Dead-Letter Queues:</strong> Equivalent to reserving dedicated workers for failed job handling.</li>
+            </ul>
+
+            <h2>Key Takeaways</h2>
+            <ul>
+                <li><strong>Data Integrity:</strong> Row-level locking enables concurrency without conflicts.</li>
+                <li><strong>Efficiency:</strong> <code>SKIP LOCKED</code> ensures workers don’t block each other.</li>
+                <li><strong>Scalability:</strong> Flexible task assignment makes the system robust.</li>
+            </ul>
+        </article>
+    </main>
+
+    <!-- Home Button -->
+    <a href="../index.html" class="back-to-top">
+        <i class="fas fa-home"></i>
+    </a>
+
+    <script src="../script.js"></script>
+</body>
+</html>
