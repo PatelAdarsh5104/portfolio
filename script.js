@@ -88,25 +88,34 @@ const skills = [
 
 const projects = [
     {
+        id: "spam-detection",
         title: "SMS & EMAIL Spam Detection",
         images: ["images/Email_spam_project.png"],
-        summary: "Developed a Spam SMS Classifier using machine learning techniques. The project utilizes the SMS Spam Collection Dataset from Kaggle and implements comprehensive data preprocessing, feature engineering, and model selection. Achieved 97% accuracy using Naive Bayes algorithm. Deployed as a web application using FastAPI and Streamlit.",
+        summary: "Developed a Spam SMS Classifier using machine learning techniques. Achieved 97% accuracy using Naive Bayes algorithm. Deployed as a web application using FastAPI and Streamlit.",
+        detail_description: "This project involves building a robust SMS and Email Spam Detection system. It utilizes the SMS Spam Collection Dataset from Kaggle. The pipeline includes comprehensive data preprocessing (tokenization, stopword removal, stemming), feature engineering using TF-IDF vectorization, and model selection. After evaluating several algorithms, Multinomial Naive Bayes was chosen for its high accuracy of 97% and precision. The final model is deployed as an interactive web application using FastAPI for the backend and Streamlit for the frontend.",
         technologies: ["Python", "ML", "Naive Bayes Algorithm", "FastAPI", "EDA"],
-        link: "https://mlprojectdemo.streamlit.app/"
+        link: "https://mlprojectdemo.streamlit.app/",
+        github: "https://github.com/PatelAdarsh5104/SMS-Spam-Classifier"
     },
     {
+        id: "resume-matching",
         title: "Resume and Job Description Matching",
         images: ["images/resume_match_project.png"],
-        summary: "Created an AI-powered resume analyzer using Groq LLM (Llama 3-8B-8192) that matches resumes with job descriptions. Features include accurate match analysis, ATS optimization suggestions, and session management. Built with Streamlit frontend and Python backend.",
-        technologies: ["Python", "GENAI", "FastAPI", "Atreamlit", "LLM", "Feature Extraction"],
-        link: "https://resumematchfinder.streamlit.app/"    
+        summary: "Created an AI-powered resume analyzer using Groq LLM (Llama 3) that matches resumes with job descriptions. Features include ATS optimization suggestions.",
+        detail_description: "An advanced AI-powered recruitment tool that bridges the gap between candidates and job descriptions. Leveraging the Groq Llama 3-8B model, the system analyzes resumes against specific job requirements. Key features include semantic similarity matching, ATS (Applicant Tracking System) score calculation, keyword gap analysis, and personalized suggestions for resume optimization. The application is built with a Streamlit interface for seamless document upload and real-time analysis.",
+        technologies: ["Python", "GENAI", "FastAPI", "Streamlit", "LLM", "Feature Extraction"],
+        link: "https://resumematchfinder.streamlit.app/",
+        github: "https://github.com/PatelAdarsh5104/Resume-Analyzer"
     },
     {
+        id: "botai",
         title: "BotAI",
         images: ["images/botai_project.png"],
-        summary: "The BOTAI project allows users to create custom bots, each with unique categories, features, and tools. Each bot has its own separate chat history, ensuring distinct interactions. Users can personalize and manage multiple bots, making the platform versatile for various purposes and enhancing the bot-creation experience.",
-        technologies: ["Python", "GENAI", "Fastapi", "Backend","SQL"],
-        link: "https://botai-krfx.onrender.com/"
+        summary: "A versatile platform for creating custom AI bots with unique categories, features, and tools. Each bot maintains its own chat history.",
+        detail_description: "BotAI is a sophisticated multi-agent platform that allows users to create, personalize, and manage their own AI bots. Each bot can be assigned specific categories (e.g., Coding Assistant, Creative Writer) and equipped with specialized tools. The architecture supports isolated chat histories for each bot, enabling distinct and context-aware interactions. Built with a FastAPI backend and a robust SQL database for session and bot management, it offers a scalable solution for diverse AI needs.",
+        technologies: ["Python", "GENAI", "Fastapi", "Backend", "SQL"],
+        link: "https://botai-krfx.onrender.com/",
+        github: "https://github.com/PatelAdarsh5104/BotAI"
     }
 ];
 
@@ -220,8 +229,8 @@ function setupProjectsSection() {
     if (!projectsContent) return;
     const projectsHTML = projects.map(project => `
         <a 
-            class="project-item ${project.link ? 'has-link' : ''}" 
-            ${project.link ? `href="${project.link}" target="_blank"` : ''}
+            class="project-item" 
+            href="projects/${project.id}.html"
         >
                 <div class="project-images">
                     ${project.images.map(img => `
