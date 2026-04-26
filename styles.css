@@ -245,11 +245,11 @@ body {
 }
 
 .experience-item {
-    min-width: 400px;
-    width: 700px;
+    min-width: 350px;
+    width: 550px;
     flex-shrink: 0;
     background: var(--card-bg);
-    padding: 2.5rem;
+    padding: 2rem;
     border-radius: 15px;
     box-shadow: var(--card-shadow);
     display: flex;
@@ -259,8 +259,8 @@ body {
 }
 
 .company-logo {
-    width: 120px;
-    height: 120px;
+    width: 80px;
+    height: 80px;
     object-fit: contain;
     margin-bottom: 0rem;
 }
@@ -294,7 +294,7 @@ body {
 }
 
 .experience-item li {
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.4rem;
     position: relative;
     padding-left: 1.5rem;
     line-height: 1.5;

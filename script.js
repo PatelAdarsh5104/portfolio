@@ -1,7 +1,7 @@
 // Page Data
 const pageInfo = {
     name: "Adarsh Patel",
-    role: "AI/ML DEVELOPER",
+    role: "AI SOFTWARE ENGINEER",
     backgroundInformation: "Innovative software developer with extensive experience in Python, RAG, Langchain, LangGraph, and Spacy, complemented by strong proficiency in deep learning frameworks such as PyTorch. I specialize in creating AI-driven solutions that enhance system accuracy and transform user experiences. My work spans developing and fine-tuning custom NLP models—including BERT for sentiment analysis and category suggestion—and implementing retrieval-augmented generation systems that drive user engagement and operational efficiency.\n\nI have built scalable backend APIs with FastAPI and deployed applications on Azure, leveraging tools like SQL and OpenAI to deliver robust, enterprise-grade solutions. A highlight of my career is designing an AI-powered Math Chat Agent that simplifies advanced mathematical concepts into clear, step-by-step explanations for students and parents.\n\nPassionate about integrating innovative technologies and streamlining data processes, I continuously seek to push the boundaries of AI and machine learning to deliver tangible business value and superior user experiences.",
     profilePic: "images/Adarsh_new_image.jpg",
     heroPic: "images/AdarshImage.jpg",
@@ -12,10 +12,26 @@ const pageInfo = {
 
 const experiences = [
     {
+        company: "Armakuni PVT",
+        jobTitle: "AI Software Engineer",
+        dateStarted: "MAY 2025",
+        dateEnded: "PRESENT",
+        logo: "images/Armakuni_logo.avif",
+        points: [
+            "Improved cooking time prediction accuracy by 19% through a custom algorithm",
+            "Built an automated pipeline for recipe generation, video production, and editing using Luma AI and Veo, reducing manual effort by 40%",
+            "Implemented event-driven workflows with AWS EventBridge and Lambda to auto-generate highlight clips and enable one-click social sharing, cutting manual work by 60%",
+            "Fine-tuned and deployed LLMs on AWS SageMaker, increasing accuracy from 54% to 86% with optimized inference at scale",
+            "Developed an LLM-powered SQL recommendation agent with re-ranking, improving candidate matching relevance",
+            "Architected a scalable multi-agent system with a custom orchestration layer (Claude Agent SDK, Amazon Neptune, OpenSearch), boosting tool-calling accuracy by 44%"
+        ],
+        technologies: ["AWS", "SageMaker", "Lambda", "EventBridge", "LLM", "Fine-tuning", "Claude SDK", "OpenSearch", "Amazon Neptune", "SQL", "Multi-agent systems", "Luma AI", "Veo"]
+    },
+    {
         company: "GenAI Novuscode Softtech pvt ltd",
         jobTitle: "AI/ML Developer",
         dateStarted: "SEP 2023",
-        dateEnded: "PRESENT",
+        dateEnded: "MAY 2025",
         logo: "images/Novuscodelogo.png",
         points: [
             "Developed robust backend APIs using FastAPI and deployed scalable web applications on Azure",
