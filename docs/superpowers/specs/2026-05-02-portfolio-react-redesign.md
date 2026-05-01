@@ -150,7 +150,7 @@ src/
   1. **Armakuni PVT** — AI Software Engineer (MAY 2025–PRESENT) → RIGHT — "● CURRENT" badge
   2. **GenAI Novuscode** — AI/ML Developer (SEP 2023–MAY 2025) → LEFT
   3. **PHPDots Technologies (Tuvoc)** — Backend Developer Intern (FEB 2023–JUN 2023) → RIGHT
-  4. **Branybeam** — [Role TBD] ([Dates TBD]) → LEFT *(details to be added by user)*
+  4. **BrainyBeam Technologies Pvt. Ltd.** — Python Development Intern (FEB 2022 – MAR 2022) → LEFT
 - **Card content:** Date, job title, company, 3 bullet points (condensed), tech tag pills
 - **Animation:** Cards slide in from their respective side on scroll
 - **Mobile:** Collapses to single-column (all cards full-width, line moves to left edge)
@@ -241,7 +241,7 @@ src/
 
 The following needs Adarsh to fill in before implementation:
 
-1. **Branybeam experience:** Role title, dates, bullet points, tech stack, logo image
+1. **BrainyBeam logo image** — need a logo file added to `public/images/` before implementation
 2. **Blog post dates & read times:** Actual publish dates for the 6 posts
 3. **Blog category tags:** Confirm: RAG, LLM, FINE-TUNING, PERFORMANCE, SYSTEMS, DATABASE
 
