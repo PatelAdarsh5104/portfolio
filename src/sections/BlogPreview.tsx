@@ -23,11 +23,11 @@ export default function BlogPreview() {
         <div className="max-w-[85%] mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {blogs.map((blog, i) => (
-              <ScrollReveal key={blog.slug} delay={i * 0.07}>
-                <motion.div whileHover={{ y: -3 }} transition={{ duration: 0.2 }}>
+              <ScrollReveal key={blog.slug} delay={i * 0.07} className="h-full">
+                <motion.div whileHover={{ y: -3 }} transition={{ duration: 0.2 }} className="h-full">
                   <Link
                     href={`/blog/${blog.slug}`}
-                    className="group block bg-bg-card border border-border-custom rounded-lg p-4 hover:border-accent/40 hover:shadow-[0_0_16px_rgba(167,139,250,0.08)] transition-all duration-300"
+                    className="group flex flex-col h-full bg-bg-card border border-border-custom rounded-lg p-4 hover:border-accent/40 hover:shadow-[0_0_16px_rgba(167,139,250,0.08)] transition-all duration-300"
                   >
                     {/* Top row */}
                     <div className="flex items-center justify-between mb-3">
@@ -44,13 +44,13 @@ export default function BlogPreview() {
                       {blog.title}
                     </h3>
 
-                    {/* Summary */}
-                    <p className="font-mono text-[11px] text-text-secondary leading-relaxed mb-3 line-clamp-2">
+                    {/* Summary — flex-1 pushes meta to bottom */}
+                    <p className="font-mono text-[11px] text-text-secondary leading-relaxed mb-3 flex-1 line-clamp-3">
                       {blog.summary}
                     </p>
 
-                    {/* Meta */}
-                    <div className="flex items-center gap-4 font-mono text-[10px] text-text-muted">
+                    {/* Meta — always at bottom */}
+                    <div className="flex items-center gap-4 font-mono text-[10px] text-text-muted mt-auto">
                       <span>{blog.date}</span>
                       <span>◷ {blog.readTime}</span>
                     </div>
