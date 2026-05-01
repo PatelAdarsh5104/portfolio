@@ -20,7 +20,7 @@ export default function BlogPreview() {
         </ScrollReveal>
 
         {/* Constrained grid with side breathing room */}
-        <div className="max-w-[85%] mx-auto">
+        <div className="max-w-[92%] mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {blogs.map((blog, i) => (
               <ScrollReveal key={blog.slug} delay={i * 0.07} className="h-full">
