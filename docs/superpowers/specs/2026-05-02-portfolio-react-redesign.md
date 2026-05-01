@@ -94,7 +94,7 @@ src/
 
 | Path | Component | Description |
 |------|-----------|-------------|
-| `/` | `app/page.tsx` | Home — Hero, About, Experience, Blog, Skills, Projects, Contact |
+| `/` | `app/page.tsx` | Home — Hero, About, Experience, Projects, Skills, Blog, Contact |
 | `/blog` | `app/blog/page.tsx` | Full blog list page |
 | `/blog/rag` | `app/blog/[slug]/page.tsx` | RAG blog post |
 | `/blog/llm` | `app/blog/[slug]/page.tsx` | LLM blog post |
@@ -155,7 +155,21 @@ src/
 - **Animation:** Cards slide in from their respective side on scroll
 - **Mobile:** Collapses to single-column (all cards full-width, line moves to left edge)
 
-### 4. Blog (Homepage Preview)
+### 4. Projects
+
+- **Layout:** 2-column grid desktop, 1-column mobile
+- **Cards (4):** Project image, title, summary, tech tags, links (GitHub + Live)
+- **Click:** Routes to `/projects/[id]` for full detail
+- **Animation:** Slide-up on scroll, hover → card lifts + purple border glow
+
+### 5. Skills
+
+- **Layout:** Icon grid — 5 columns desktop, 3 columns tablet, 2 columns mobile
+- **Items (20):** Python, FastAPI, Django, Flask, LLM, HuggingFace, NLP, TensorFlow, PyTorch, OpenCV, LangChain, LangGraph, Azure, AWS, MySQL, Pinecone, Chroma DB, Git, GitHub, Streamlit
+- **Card:** Icon image + skill name label
+- **Animation:** Staggered pop-in on scroll
+
+### 6. Blog (Homepage Preview)
 
 - **Layout:** Constrained grid (~78% width, centered) → 2-column card grid
 - **Cards (6 total):** Smaller compact size
@@ -166,20 +180,6 @@ src/
 - **Slugs:** `rag`, `llm`, `finetuning`, `kv-cache`, `latency`, `postgresql-locking`
 - **"View all posts →"** button below grid → routes to `/blog`
 - **Animation:** Staggered card fade-in on scroll
-
-### 5. Skills
-
-- **Layout:** Icon grid — 5 columns desktop, 3 columns tablet, 2 columns mobile
-- **Items (20):** Python, FastAPI, Django, Flask, LLM, HuggingFace, NLP, TensorFlow, PyTorch, OpenCV, LangChain, LangGraph, Azure, AWS, MySQL, Pinecone, Chroma DB, Git, GitHub, Streamlit
-- **Card:** Icon image + skill name label
-- **Animation:** Staggered pop-in on scroll
-
-### 6. Projects
-
-- **Layout:** 2-column grid desktop, 1-column mobile
-- **Cards (4):** Project image, title, summary, tech tags, links (GitHub + Live)
-- **Click:** Routes to `/projects/[id]` for full detail
-- **Animation:** Slide-up on scroll, hover → card lifts + purple border glow
 
 ### 7. Contact
 
