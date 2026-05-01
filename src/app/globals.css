@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #ffffff;
+  --bg-card: #f5f5f7;
+  --bg-elevated: #ebebf0;
+  --border-custom: #e0dde8;
+  --text-primary: #111111;
+  --text-secondary: #4b5563;
+  --text-muted: #9ca3af;
+}
+
+.dark {
+  --bg-primary: #0a080f;
+  --bg-card: #120e1c;
+  --bg-elevated: #1e1a2e;
+  --border-custom: #2a2040;
+  --text-primary: #f1f0ff;
+  --text-secondary: #6b7280;
+  --text-muted: #4b5563;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: var(--font-jetbrains), monospace;
+}
+
+/* Blog & project detail content styling */
+.prose h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 2rem 0 0.75rem;
+}
+
+.prose p {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+}
+
+.prose ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.25rem;
+}
+
+.prose ul li {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  padding-left: 1.25rem;
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+.prose ul li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #a78bfa;
+}
+
+.prose strong {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.prose code {
+  background: var(--bg-elevated);
+  color: #a78bfa;
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2040;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a78bfa55;
+}
